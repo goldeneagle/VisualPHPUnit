@@ -737,6 +737,7 @@ class VPU {
 
         if ( CONFIG_XML_FILE && $xml = realpath(CONFIG_XML_FILE) ) {
             $config = PHPUnit_Util_Configuration::getInstance($xml);
+            $test_config = $config->getTestSuiteConfiguration();
             $phpunit_config = $config->getPHPUnitConfiguration();
             $phpunit_config += array(
                 'listeners' => array(
@@ -744,7 +745,7 @@ class VPU {
                 )
             );
             $runner = new PHPUnit_TextUI_TestRunner();
-            $runner->doRun($suite, $phpunit_config);
+            $runner->doRun($test_config, $phpunit_config);
         } else {
             $result = new PHPUnit_Framework_TestResult();
             $result->addListener(new PHPUnit_Util_Log_JSON());

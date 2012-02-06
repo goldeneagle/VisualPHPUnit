@@ -41,13 +41,18 @@ ini_set('display_errors', 1);
 define("BASE_INSTALL", realpath(__DIR__));
 
 // The directory where PEAR is located
-define('PEAR_PATH', '/usr/share/pear');
+define('PEAR_PATH', '/usr/local/Cellar/php/5.3.10/lib/php');
 
 set_include_path(get_include_path().PATH_SEPARATOR.
                  PEAR_PATH.PATH_SEPARATOR);
 
+define('ACTIVE_RECORD_DB', 'test_db');
+require_once('PHPUnit/Autoload.php');
+require_once('../../src/common.php');
+require_once('../../tests/config.test.php');
+
 // The directory where the tests reside
-define('TEST_DIRECTORY', BASE_INSTALL . '/tests/');
+define('TEST_DIRECTORY', '../../tests/');
 
 /*
  * Optional settings

@@ -48,11 +48,11 @@ set_include_path(get_include_path().PATH_SEPARATOR.
 
 define('ACTIVE_RECORD_DB', 'test_db');
 require_once('PHPUnit/Autoload.php');
-require_once('../../src/common.php');
-require_once('../../tests/config.test.php');
+require_once(BASE_INSTALL.'/../../../src/common.php');
+require_once(BASE_INSTALL.'/../../../tests/config.test.php');
 
 // The directory where the tests reside
-define('TEST_DIRECTORY', '../../tests/');
+define('TEST_DIRECTORY', BASE_INSTALL.'/../../../tests/');
 
 /*
  * Optional settings

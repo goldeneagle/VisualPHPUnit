@@ -48,7 +48,7 @@ set_include_path(get_include_path().PATH_SEPARATOR.
 
 define('ACTIVE_RECORD_DB', 'test_db');
 require_once('PHPUnit/Autoload.php');
-require_once('../../src/common.php');
+
 require_once('../../tests/config.test.php');
 
 // The directory where the tests reside
